@@ -58,7 +58,86 @@ function makeKitty(){
     }
     return g;
   }
-
+  function getHp(){
+	  var hp = Math.random();
+	  if(hp <= 0.05){
+		  hp = "1";
+	  }else if (hp <= 0.10) {
+		  hp = "2";
+	  }else if (hp <= 0.15) {
+		  hp = "3";
+	  }else if (hp <= 0.30) {
+		  hp = "4";
+	  }else if (hp <= 0.5) {
+		  hp = "5";
+	  }else if (hp >= 0.6) {
+		  hp = "6";
+	  }else if (hp >= 0.65) {
+		  hp = "7";
+	  }else if (hp >= 0.70) {
+		  hp = "8";
+	  }else if (hp >= 0.85) {
+		  hp = "9";
+	  }else if (hp >= 0.95) {
+		  hp = "10";
+	  }else{
+		  hp = "5";
+	  }
+	  return hp;
+  }
+  function getCha(){
+	  var cha = Math.random();
+	  if(getHp() < .30){ // changing the probability of getting a higher score on cha based on low hp
+		  if(cha <= 0.01){
+			  cha = "1";
+		  }else if (cha <= 0.05) {
+			  cha = "2";
+		  }else if (cha <= 0.1) {
+			  cha = "3";
+		  }else if (cha <= 0.2) {
+			  cha = "4";
+		  }else if (cha <= 0.3) {
+			  cha = "5";
+		  }else if (cha >= 0.3) {
+			  cha = "6";
+		  }else if (cha >= 0.35) {
+			  cha = "7";
+		  }else if (cha >= 0.45) {
+			  cha = "8";
+		  }else if (cha >= 0.75) {
+			  cha = "9";
+		  }else if (cha >= 0.85) {
+			  cha = "10";
+		  }else{
+			  cha = "5";
+		  }
+	  }else{
+		  if(cha <= 0.05){
+			  cha = "1";
+		  }else if (cha <= 0.10) {
+			  cha = "2";
+		  }else if (cha <= 0.15) {
+			  cha = "3";
+		  }else if (cha <= 0.30) {
+			  cha = "4";
+		  }else if (cha <= 0.5) {
+			  cha = "5";
+		  }else if (cha >= 0.6) {
+			  cha = "6";
+		  }else if (cha >= 0.65) {
+			  cha = "7";
+		  }else if (cha >= 0.70) {
+			  cha = "8";
+		  }else if (cha >= 0.85) {
+			  cha = "9";
+		  }else if (cha >= 0.95) {
+			  cha = "10";
+		  }else{
+			  cha = "5";
+		  }
+		  return cha;
+		 }
+	  }
    catName = getName();
    catColor = getColor();
    catAge = getAge();
@@ -79,6 +158,8 @@ function makeKitty(){
 	document.getElementById("gender").innerHTML = catGender;
 	document.getElementById("color").innerHTML = catColor;
 	document.getElementById("pronoun").innerHTML = catPronoun;
+	alert("your cat's hp is "+getHp()+", it's chrasima is " + getCha());
+
 
 	//setting sprite image
 	if (catAge === "a young " && catGender === "female.") {
